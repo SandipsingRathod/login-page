@@ -1,0 +1,28 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    margin:20px;
+  }
+  
+  .example-container > * {
+    width: auto;
+  }
+  .container {
+      margin-left: 500px;
+    width: 300px;
+    height: 350px;
+    border: 1px solid lightslategray;
+  }
+  .example-right-align {
+    text-align: right;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  input.example-right-align {
+    -moz-appearance: textfield;
+  }
+  

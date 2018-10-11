@@ -1,0 +1,32 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<mat-drawer-container class="container"> 
+  <!-- {{loginModel.value | json}} -->
+<div class="example-container">
+    <form #loginModel="ngForm">
+            <h3>please login here.</h3>
+        <mat-form-field>
+            <div class="form-group">
+                <input matInput placeholder="enter user name" name="userName"  [(ngModel)]="name"
+                    required>
+            </div>
+            <mat-error *ngIf="userName.invalid">{{getErrorMessage()}}</mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field>
+            <div class="form-group">
+                <input matInput placeholder="enter your password" name="password" #pWord="ngModel"
+                    [(ngModel)]="password"  [type]="hide ? 'password' : 'text'">
+            </div>
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+            <mat-error *ngIf="userPassword.invalid">{{getErrorMessageFromPassword()}}</mat-error>
+        </mat-form-field>
+
+        <div class="divider">
+            <button  mat-raised-button  type="submit" color="primary" (click)="loginDetail(loginModel.value)">Submit</button>
+         
+            <button mat-raised-button color="Basic" (click)="cancelPage()">Cancel</button>
+        </div>
+    </form>
+</div>
+</mat-drawer-container>
